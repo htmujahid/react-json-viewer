@@ -25,9 +25,6 @@ jobs:
     - name: Build
       run: npm run build  
 
-    - name: Build types
-      run: npm run build:types
-
     - name: Publish to npm
       run: npm publish --access public
 
