@@ -1,5 +1,5 @@
 {
-  "name": "react-json-viewer",
+  "name": "@htmujahid/react-json-viewer",
   "version": "1.0.0",
   "description": "A simple react component to display a JSON in a tree view with syntax highlighting.",
   "main": "dist/index.js",
@@ -11,10 +11,6 @@
   },
   "author": "htmujahid",
   "license": "MIT",
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
