@@ -43,9 +43,6 @@
     "url": "https://github.com/htmujahid/react-json-viewer/issues"
   },
   "homepage": "https://github.com/htmujahid/react-json-viewer#readme",
-  "publishConfig": {
-    "@htmujahid:registry": "https://npm.pkg.github.com"
-  },
   "tags": [
     "react",
     "json-viewer",
