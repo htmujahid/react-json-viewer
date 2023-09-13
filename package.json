@@ -1,6 +1,6 @@
 {
   "name": "@htmujahid/react-json-viewer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple react component to display a JSON in a tree view with syntax highlighting.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
