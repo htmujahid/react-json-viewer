@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { filterValue } from "../utils/filter";
+
 import JsonParser from "./JsonParser";
 
 export class JSONViewerFactory {
