@@ -1,49 +1,49 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { isUrl } from "../utils/url";
+import { isUrl } from '../utils/url';
 
 export default class JsonRenderer {
-    createSimpleViewOf(value: any) {
-        const spanEl = document.createElement("span");
-        let type: string = typeof value;
-        let asText = "" + value;
-        if (isUrl(value)) {
-            const a = document.createElement("a");
-            a.innerText = '"' + value + '"';
-            a.href = "https://www.google.com";
-            a.setAttribute("target", "_blank");
-            spanEl.appendChild(a);
-        } else {
-            if (type === "string") {
-                asText = '"' + value + '"';
-            } else if (value === null) {
-                type = "null";
-            }
-            spanEl.className = "type-" + type;
-            spanEl.textContent = asText;
-        }
-
-        return spanEl;
+  createSimpleViewOf(value: any) {
+    const spanEl = document.createElement('span');
+    let type: string = typeof value;
+    let asText = '' + value;
+    if (isUrl(value)) {
+      const a = document.createElement('a');
+      a.innerText = '"' + value + '"';
+      a.href = 'https://www.google.com';
+      a.setAttribute('target', '_blank');
+      spanEl.appendChild(a);
+    } else {
+      if (type === 'string') {
+        asText = '"' + value + '"';
+      } else if (value === null) {
+        type = 'null';
+      }
+      spanEl.className = 'type-' + type;
+      spanEl.textContent = asText;
     }
 
-    createItemsCount(count: number) {
-        const itemsCount = document.createElement("span");
-        itemsCount.className = "items-ph hide";
-        itemsCount.innerHTML = this.getItemsTitle(count);
+    return spanEl;
+  }
 
-        return itemsCount;
-    }
+  createItemsCount(count: number) {
+    const itemsCount = document.createElement('span');
+    itemsCount.className = 'items-ph hide';
+    itemsCount.innerHTML = this.getItemsTitle(count);
 
-    createLink(title: string) {
-        const linkElement = document.createElement("a") as HTMLAnchorElement;
-        linkElement.classList.add("list-link");
-        linkElement.href = "javascript:void(0)";
-        linkElement.innerHTML = title || "";
-        return linkElement;
-    }
+    return itemsCount;
+  }
 
-    getItemsTitle(count: number) {
-        const itemsTxt = count > 1 || count === 0 ? "items" : "item";
+  createLink(title: string) {
+    const linkElement = document.createElement('a') as HTMLAnchorElement;
+    linkElement.classList.add('list-link');
+    linkElement.href = 'javascript:void(0)';
+    linkElement.innerHTML = title || '';
+    return linkElement;
+  }
 
-        return count + " " + itemsTxt;
-    }
+  getItemsTitle(count: number) {
+    const itemsTxt = count > 1 || count === 0 ? 'items' : 'item';
+
+    return count + ' ' + itemsTxt;
+  }
 }

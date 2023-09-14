@@ -1,101 +1,100 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { filterValue } from "../utils/filter";
+import { filterValue } from '../utils/filter';
 
-import JsonParser from "./JsonParser";
+import JsonParser from './JsonParser';
 
 export class JSONViewerFactory {
+  createJSONViewer({
+    json,
+    root,
+    filter,
+    maxLevel,
+    columnAt,
+  }: {
+    json: any;
+    root: string;
+    filter: string;
+    maxLevel: number;
+    columnAt: number;
+  }) {
+    const jsonViewer = new JsonViewer();
 
-    createJSONViewer({
-        json,
-        root,
-        filter,
-        maxLevel,
-        columnAt,
-    }: {
-        json: any;
-        root: string;
-        filter: string;
-        maxLevel: number;
-        columnAt: number;
-    }) {
-        const jsonViewer = new JsonViewer();
+    jsonViewer.setJSON(json);
+    jsonViewer.setRoot(root);
+    jsonViewer.setMaxLevel(maxLevel);
+    jsonViewer.setColumnAt(columnAt);
 
-        jsonViewer.setJSON(json);
-        jsonViewer.setRoot(root);
-        jsonViewer.setMaxLevel(maxLevel);
-        jsonViewer.setColumnAt(columnAt);
+    filterValue(jsonViewer, filter);
 
-        filterValue(jsonViewer, filter);
+    jsonViewer.init();
 
-        jsonViewer.init();
-
-        return jsonViewer;
-    }
+    return jsonViewer;
+  }
 }
 
 export default class JsonViewer {
-    root: string;
-    jsonContainer: HTMLElement;
-    json: any;
-    maxLevel: number;
-    columnAt: number;
+  root: string;
+  jsonContainer: HTMLElement;
+  json: any;
+  maxLevel: number;
+  columnAt: number;
 
-    constructor() {
-        this.root = "";
-        this.jsonContainer = document.createElement("pre");
-        this.jsonContainer.classList.add("json-viewer");
-        this.maxLevel = -1;
-        this.columnAt = -1;
-    }
+  constructor() {
+    this.root = '';
+    this.jsonContainer = document.createElement('pre');
+    this.jsonContainer.classList.add('json-viewer');
+    this.maxLevel = -1;
+    this.columnAt = -1;
+  }
 
-    init() {
-        this.jsonContainer.innerHTML = "";
+  init() {
+    this.jsonContainer.innerHTML = '';
 
-        const jsonParser = new JsonParser();
-        
-        jsonParser.parseJSON(
-            this.jsonContainer,
-            this.json,
-            this.maxLevel,
-            this.columnAt,
-            0,
-            this.root
-        );
-    }
+    const jsonParser = new JsonParser();
 
-    setJSON(json: any) {
-        this.json = json;
-    }
+    jsonParser.parseJSON(
+      this.jsonContainer,
+      this.json,
+      this.maxLevel,
+      this.columnAt,
+      0,
+      this.root,
+    );
+  }
 
-    setRoot(root: string) {
-        this.root = root;
-    }
+  setJSON(json: any) {
+    this.json = json;
+  }
 
-    setMaxLevel(maxLvl: number) {
-        this.maxLevel = maxLvl;
-    }
+  setRoot(root: string) {
+    this.root = root;
+  }
 
-    setColumnAt(colAt: number) {
-        this.columnAt = colAt;
-    }
+  setMaxLevel(maxLvl: number) {
+    this.maxLevel = maxLvl;
+  }
 
-    getJSON() {
-        return this.json;
-    }
+  setColumnAt(colAt: number) {
+    this.columnAt = colAt;
+  }
 
-    getRoot() {
-        return this.root;
-    }
+  getJSON() {
+    return this.json;
+  }
 
-    getMaxLevel() {
-        return this.maxLevel;
-    }
+  getRoot() {
+    return this.root;
+  }
 
-    getColumnAt() {
-        return this.columnAt;
-    }
+  getMaxLevel() {
+    return this.maxLevel;
+  }
 
-    getJSONContainer() {
-        return this.jsonContainer;
-    }
+  getColumnAt() {
+    return this.columnAt;
+  }
+
+  getJSONContainer() {
+    return this.jsonContainer;
+  }
 }
