@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+var MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let entry = "./src/index.ts";
 let output = {
@@ -29,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use:  [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ],
   },
@@ -39,6 +40,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: './components/JsonViewer.css',
     }),
   ],
   devServer: {
