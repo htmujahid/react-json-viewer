@@ -1,14 +1,14 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "jsx": "react-jsx",
-      "outDir": "./dist",
-      "declaration": true,
-      "sourceMap": true,
-      "strict": true
-    },
-    "include": ["src/**/*.tsx"],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.tsx"],
+  "exclude": ["node_modules"]
 }
-  
