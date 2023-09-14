@@ -6,16 +6,16 @@ import JsonParser from './JsonParser';
 export class JSONViewerFactory {
   createJSONViewer({
     json,
-    root,
-    filter,
-    maxLevel,
-    columnAt,
+    root = '',
+    filter = '',
+    maxLevel = -1,
+    columnAt = -1,
   }: {
     json: any;
-    root: string;
-    filter: string;
-    maxLevel: number;
-    columnAt: number;
+    root?: string;
+    filter?: string;
+    maxLevel?: number;
+    columnAt?: number;
   }) {
     const jsonViewer = new JsonViewer();
 
