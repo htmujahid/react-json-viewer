@@ -48,3 +48,20 @@ export default function Home() {
 | filter     | string   | No       | ""            | A filter string to start displaying the JSON data.                                           | `"some_key"`          |
 | maxLevel   | number   | No       | -1            | The maximum depth to which the JSON should be expanded. Use -1 to expand all levels.         | `3`                   |
 | columnAt   | number   | No       | -1            | The column number at which to start displaying JSON data. Use -1 for no specific column.     | `2`                   |
+
+## Customization
+
+You can customize the JSON viewer by overriding the following CSS classes:
+
+| Class Name                     | Description                                                                 |
+|--------------------------------|-----------------------------------------------------------------------------|
+| `.json-viewer`                 | The root class of the JSON viewer.                                          |
+| `.json-viewer .type-string`    | The class for string type values.                                           |
+| `.json-viewer .type-number`    | The class for number type values.                                           |
+| `.json-viewer .type-boolean`   | The class for boolean type values.                                          |
+| `.json-viewer .type-null`      | The class for null type values.                                             |
+| `.json-viewer .type-undefined` | The class for undefined type values.                                        |
+| `.json-viewer .type-date`      | The class for date type values.                                             |
+| `.json-viewer .list-link`      | The class for the href link of list items.                                  |
+
+

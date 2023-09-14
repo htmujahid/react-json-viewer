@@ -29,10 +29,10 @@ export default function ReactJsonViewer({
 
     const jsonViewer = jsonViewerFactory.createJSONViewer({
       json: data,
-      root: root ?? '',
-      filter: filter ?? '',
-      maxLevel: maxLevel ?? -1,
-      columnAt: columnAt ?? -1,
+      root: root,
+      filter: filter,
+      maxLevel: maxLevel,
+      columnAt: columnAt,
     });
 
     jsonRef.current.appendChild(jsonViewer.getJSONContainer());
