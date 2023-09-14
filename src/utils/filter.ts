@@ -6,7 +6,7 @@ export function filterValue(jsonViewer: JsonViewer, filter: string) {
     }
     
     let data = jsonViewer.json;
-    let filterArray = filter.split("/");
+    const filterArray = filter.split("/");
 
     if (filterArray[0] === jsonViewer.getRoot() || filterArray[0] === "") {
         filterArray.splice(0, 1);
