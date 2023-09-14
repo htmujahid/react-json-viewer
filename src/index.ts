@@ -1,3 +1,3 @@
-import ReactJsonViewer from "./components/ReactJsonViewer";
+import ReactJsonViewer from './components/ReactJsonViewer';
 
 export default ReactJsonViewer;
